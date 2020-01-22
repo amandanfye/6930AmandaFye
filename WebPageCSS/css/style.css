@@ -1,0 +1,64 @@
+body {
+	font-family: georgia;
+	background-color: #1b262c; /* For browsers that don't support gradients. */
+	background-image: linear-gradient(#1b262c, #3282b8); /* For browsers that do display gradients. */
+    text-align: center;
+}
+.h1 {
+	color: white;
+	font-family: 'Great Vibes', cursive;
+	font-size: 32pt;
+	background-color: #3282b8;
+}
+h2 {
+	color: #0f4c75;
+	font-family: 'Great Vibes', cursive;
+	font-size: 32pt;
+}
+p {
+	color: #1b262c;
+	font-family: Georgia;
+	font-size: 14pt;
+}
+tr {
+	color: #1b262c;
+	font-family: Georgia;
+	font-size: 14pt;
+}
+.body {
+	max-width: 800px;
+	margin: auto;
+	background: white;
+	padding: 10px;
+}
+.video {
+	background-color: #bbe1fa;
+}
+.ol {
+	text-align: center;
+	list-style-position: inside;
+	color: #1b262c;
+ 	font-family: georgia;
+}
+
+/* CSS for the pets table. */
+#pets {
+  font-family: Georgia;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#pets td, #pets th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#pets tr:nth-child(even){background-color: #f2f2f2;}
+
+#pets th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #1b262c;
+  color: white;
+}
