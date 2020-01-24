@@ -39,6 +39,27 @@ tr {
 	list-style-position: inside;
 	color: #1b262c;
  	font-family: georgia;
+	font-size: 14pt;
+}
+/* CSS for the pets photos. */
+div.gallery {
+	margin: 0 auto;
+	width: 1000px;
+}
+div.photos {
+  margin: 5px;
+  border: 1px solid #1b262c;
+  float: left;
+  width: 180px;
+}
+div.photos img {
+  width: 100%;
+  height: auto;
+}
+
+div.description {
+  padding: 15px;
+  text-align: center;
 }
 
 /* CSS for the pets table. */
