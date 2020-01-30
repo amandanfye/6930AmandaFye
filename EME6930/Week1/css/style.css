@@ -86,28 +86,28 @@ div.description {
 
 /* Nav Bar */
 #nav {
-	height: 32px;
-	padding: 2px 2px;
+	height: 60px;
+	padding: 1px;
 	background: #3282b8;
 	}
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
+.nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 	}
-	li {
-		float:left;
+.nav li {
+	float:left;
 	}
-	li a{
-		display:block;
-		color: #fff;
-		text-align: center;
-		padding: 6px 8px;
-		text-decoration: none;
-		font-size: 16px;
-		font-family: Georgia;
+.nav li a{
+	display:block;
+	text-align: center;
+	padding: 2px 4px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: Georgia;
 	}
-	li a:hover {
-		background-color: #1b262c;
+.nav li a:hover {
+	background-color: #1b262c;
 	}

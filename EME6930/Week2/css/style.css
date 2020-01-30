@@ -21,11 +21,6 @@ img {
 	background: #1b262c;
 	text-align:center;
 }
-#nav {
-	height: 46px;
-	padding: 2px 2px;
-	background: #3282b8;
-}
 #main {
     float:left;
     width:60%;
@@ -81,25 +76,31 @@ ol {
  	font-family: georgia;
 	font-size: 14pt;
 }
-ul {
+/*Navigation Styling*/
+#nav {
+	height: 60px;
+	padding: 1px;
+	background: #3282b8;
+}
+.nav ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
-li {
+.nav li {
 	float:left;
 }
-li a{
+.nav li a{
 	display:block;
-	color: #fff;
 	text-align: center;
-	padding: 14px 16px;
+	padding: 6px 10px;
+	color: #fff;
 	text-decoration: none;
 	font-size: 16px;
 	font-family: Georgia;
 }
-li a:hover {
+.nav li a:hover {
 	background-color: #1b262c;
 }
 
