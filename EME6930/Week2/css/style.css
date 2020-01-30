@@ -1,0 +1,146 @@
+body, html {
+	margin:0;
+	padding:0;
+	background-color: #fff; 
+}
+iframe {
+	width:560px;
+	height:315px;
+	border: 0;
+}
+img {
+	width:50%;
+}
+#wrap {
+	width:100%;
+	margin:0 auto;
+	background: #1b262c;
+}
+#header{
+	padding:5px 10px;
+	background: #1b262c;
+	text-align:center;
+}
+#nav {
+	height: 46px;
+	padding: 2px 2px;
+	background: #3282b8;
+}
+#main {
+    float:left;
+    width:60%;
+    padding:2.5%;
+    background-image: linear-gradient(#1b262c, #3282b8); /* For browsers that do display gradients. */
+	text-align:center;
+}
+#sidebar {
+    float:right;
+    width:30%;
+    padding:2.5%;
+    background: #fff;
+	text-align:center;
+}
+#footer {
+    clear:both;
+    padding:5px 10px;
+    background:#1b262c;
+	text-align:center;
+}
+#footer p {
+    margin:0;
+}
+h1 {
+	color: #fff;
+	font-family: 'Great Vibes', cursive;
+	font-size: 56pt;
+}
+h2 {
+	color: #fff;
+	font-family: 'Great Vibes', cursive;
+	font-size: 32pt;
+}
+h3 {
+	color: #1b262c;
+	font-family: 'Great Vibes', cursive;
+	font-size: 32pt;
+}
+p {
+	color: #fff;
+	font-family: Georgia;
+	font-size: 14pt;
+}
+tr {
+	color: #1b262c;
+	font-family: Georgia;
+	font-size: 14pt;
+}
+ol {
+	text-align: center;
+	list-style-position: inside;
+	color: #fff;
+ 	font-family: georgia;
+	font-size: 14pt;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+li {
+	float:left;
+}
+li a{
+	display:block;
+	color: #fff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: Georgia;
+}
+li a:hover {
+	background-color: #1b262c;
+}
+
+
+/* CSS for the pets table. */
+#pets {
+  font-family: Georgia;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#pets td, #pets th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#pets tr:nth-child(even){background-color: #f2f2f2;}
+
+#pets th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #1b262c;
+  color: #fff;
+}
+
+
+
+/* CSS for the pets photos. */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 150px;
+}
+
