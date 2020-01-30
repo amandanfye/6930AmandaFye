@@ -91,13 +91,13 @@ div.description {
 	background: #3282b8;
 	}
 .nav ul {
-	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	}
 .nav li {
 	float:left;
+	list-style-type: none;
 	}
 .nav li a{
 	display:block;
