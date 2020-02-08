@@ -1,0 +1,151 @@
+/*Responsive Header Image*/
+.picresponsive {
+  width: 100%;
+  height: auto;
+}
+
+
+/*Nav Bar*/
+.nav {
+  overflow: hidden;
+  background-color: #0A1217;
+}
+
+.nav a {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.nav a:hover {
+  background-color: #284746;
+}
+
+.nav a.active {
+  background-color: #60A2B5;
+}
+
+.nav .icon {
+  display: none;
+}
+
+/*Formatting*/
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+}
+hr {
+	width: 60%;
+	color: #fff;
+	align: center;
+}
+img {
+	width:100%;
+}
+
+/*Layout*/
+#container {
+	width:100%;
+	background-color: #5DA37A;
+}
+#main {
+	float: left;
+	width: 66%;
+	color: #fff;
+	text-align:center;
+	background-color: #5DA37A;
+}
+#mainprop {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#side {
+	float: left;
+	width: 34%;
+	color: #000;
+	text-align:center;
+	background-color: #5DA37A;
+}
+#footer {
+	color: #fff;
+	background-color: #0A1217;
+	text-align: center;
+	height: 40px;
+	font-size: 14px;
+	padding-top: 23px;
+	padding-bottom: 23px;
+}
+
+/*Pets*/
+#petscontainer {
+	color: #fff;
+	background-color: #284746;
+	text-align: center;
+	padding: 2% 2% 2% 2%;
+}
+#pets {
+	table-layout: fixed;
+	width: 100%;
+}
+#pets tr {
+	width: 23%;
+}
+#pets th {
+  	padding: 15px;
+	font-family: 'Petit Formal Script', cursive;
+	font-size: 20px;
+	text-align: center;
+  	background-color: #284746;
+	color: #fff;
+}
+#pets td {
+  	padding: 5px;
+	font-family: 'Libre Baskerville', serif;
+	text-align: center;
+  	background-color: #284746;
+	color: #fff;
+}
+#petscontainer img{
+	width: 100%;
+	border-radius:50%;
+}
+#petscontainer img:hover {
+	transform: scale(1.5);
+}
+
+/*Responsive Mobile*/
+@media screen and (max-width: 850px) {
+  .nav a:not(:first-child) {display: none;}
+  .nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 850px) {
+  .nav.responsive {position: relative;}
+  .nav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 850px) {
+	#side {
+		float: none ;
+		width: 100% ;
+	}
+	#main {
+		float: none ;
+		width: 100% ;
+	}
+}
