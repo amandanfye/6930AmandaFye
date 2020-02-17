@@ -1,0 +1,46 @@
+<html>
+<head>
+<title> Amanda Fye Javascript</title>
+<script type="text/javascript">
+	
+/* Declarationg of five variables - Let's do a math trick!*/
+var variable_1, variable_2, variable_3, variable_4, variable_5;
+
+/*User enters any number*/
+variable_1 = Number(prompt("Enter a number."));
+
+/*Number is multipled by 3*/
+variable_2 = variable_1*3;
+document.write ("<br><h2> Your number multipled by 3 is " + variable_2 + ".</h2>");
+
+/*6 is added to variable 2*/
+variable_3 = variable_2 + 6;
+document.write 
+("<br><h2> 6 was added to the previous number to now equal " + variable_3 + ".<h2>");
+
+/*Variable 3 is divided by 3*/
+variable_4 = variable_3 /3;
+document.write ("<br><h2> The previous number divided by 6 is " + variable_4 + ".<h2>");
+
+/*Variable 1 is subtracted from variable 4 and should give a number of 2*/
+variable_5 = variable_4 - variable_1;
+document.write ("<br><h2> The last number was subtracted from the first number you entered and is " + variable_5 + ".<h2>");
+
+/* If 2 is shown, congratualtions text is visible. If 2 is not shown, try again text is available although this should not happen if your JavaScript is done correctly :) */
+if (variable_5 == 2)
+		{ document.write("Congratulations! " + variable_5 + " is you answer and the math trick worked!</h3>");
+	     document.write("<body bgcolor='#b6d7a8'>");
+		}
+	    else 
+	        	{ document.write("Try again! You should have gotten 2, but you got " + variable_5 + "</h3>");
+		}
+	
+</script>
+</head>
+
+<body>
+<h1>Math tricks with Javascript are fun!</h1>
+</body>
+</html>
+
+ 
