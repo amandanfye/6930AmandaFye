@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+ 
+    /* global variable .. and object */
+var standard = {
+code:"SC.912.L.18.1", subject:"biology", description:"Describe the basic molecular structures and primary functions of the four major categories of biological macromolecules.", example:"The primary function of a carbohydrate is to probide your body with energy.", reportingcategory: "Molecular and Cellular Biology", 
+    write_standard: function () 
+    {
+        var str = "write_standard says ... Code is " + this.code + ", Subject is  " + this.subject + ", Description is " + this.description + ",  Example is " + this.example + ", Reporting category is " + this.reportingcategory;
+        
+        alert(str);
+    }
+    
+};
+    
+var Cell_standard = {
+code:"SC.912.L.14.1", subject:"biology", description:"Describe the scientific theory of cells (cell theory) and relate the history of its discovery to the process of science.", example:"The cell theory is a basic principle of biology and is made up of three parts.", reportingcategory: "Molecular and Cellular Biology", 
+    write_standard: function () 
+    {
+        var str = "write_standard says ... Code is " + this.code + ", Subject is  " + this.subject + ", Description is " + this.description + ", Example is " + this.example + ", Reporting category is " + this.reportingcategory;
+        
+        alert(str);
+    },
+    
+    prompt_values: function () 
+    {
+        this.code = prompt("enter the standard code");
+        this.subject = prompt("enter the standard subject");
+        this.description = prompt("enter the standard description");
+        this.example = prompt("enter a standard exampler");
+        this.reportingcategory = prompt("enter the standard reporting category");
+    }
+};
+
+    /* function to write out the object. */
+function pullstandard()
+    {
+        standard.write_standard();
+        Cell_standard.write_standard();
+        Cell_standard.prompt_values();
+        Cell_standard.write_standard();
+        
+        /* local variable */
+  var str = "The standard is: " + standard.code + " Subject: " + standard.subject;
+  
+  var str2;
+        
+  str2 = "The cell theory standard is:  " + Cell_standard.code + " " + Cell_standard.subject + " " + Cell_standard.description + " " + Cell_standard.example + " " + Cell_standard.reportingcategory;
+        
+
+  document.getElementById("standard1").innerHTML = str;
+  document.getElementById("standard2").innerHTML = str2;
+      
+ if (Cell_standard.code == "SC.912.L.14.1")
+  {
+    alert (" Yes, this is the cell theory standard.");
+        
+    }
+}
+
+</script>
+</head>
+<body>
+
+<div class="container">
+	<div class="jumbotron">
+		<h1>Generating Florida Biology Standards with Javascript Objects.</h1>
+			<p id="standard1"></p>
+    		<p id="standard2"></p>
+	</div> 
+		<input type="button" class="btn btn-info" name="button" onclick="pullstandard()"value="Generate Standard"/>
+</div>
+
+</body>
+</html>
