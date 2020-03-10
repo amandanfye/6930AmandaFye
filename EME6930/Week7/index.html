@@ -1,0 +1,176 @@
+<!doctype html>
+
+<!-- Amanda Fye -->
+<html lang="en">
+<!-- Adapted from the Week 7 covid example-->
+<head>
+
+<!-- Required meta tags for responsiveness -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<title>Contact Us</title>
+
+<!-- CSS -->
+<style>
+	#container {
+    	margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
+		margin-bottom: 5%;
+        }
+
+    #output {
+        border: 15px;
+        padding: 20px;
+        margin: 20px;
+        margin-top: 1%;
+        text-align: center;
+        font-size: x-large;
+        }
+	
+	h1 {
+		color: #f04b4c;
+		}
+</style>
+
+<!-- JS -->
+<script>
+// Defining our object
+	function Selection(fm) {
+		// Defning our constructors
+        this.name = fm.name.value;
+        this.email = fm.email.value;
+        this.age = Number(fm.age.value);
+        this.option1 = fm.option1.checked; // Injured
+        this.option2 = fm.option2.checked; // Not injured
+        this.option3 = fm.option3.checked; // Unsure
+        this.role1 = fm.role1.checked; // Driver
+        this.role2 = fm.role2.checked; // Passenger/other
+
+// Return box colors
+        this.accident = function () {
+        // Injured and driver or passenger
+        	if (this.option1 && (this.role1 || this.role2)) {
+     			return "#e7e7e7";
+			}
+		// Not injured and driver or passenger
+	      	if (this.option2 && (this.role1 || this.role2)) {
+	     		return "#f04b4c";
+			}
+	    // Unsure if injured and driver or passenger
+	      	if (this.option3 && (this.role1 || this.role2)) {
+	     		return "#3d6098";
+			}	    
+        }
+
+// Return box text
+         this.direction = function () {
+				
+//Injured and driver
+				if (this.option1 && this.role1) {
+					return "Being a driver involved in a car accident can be worrisome. Call us at 813-555-5555 to set up a free consultation to review your case and determine the best route to ensure your injuries and the potential injuries of others are taken care of."
+				}
+//Injured and passenger
+				if (this.option1 && this.role2) {
+					return "Being involved in a car accident can be worrisome. Call us at 813-555-5555 to set up a free consultation to review your case and determine the best route to ensure your injuries and the potential injuries of others are taken care of."
+				}
+//Not injured and driver
+				if (this.option2 && this.role1) {
+                    if (this.age == 65) { // elderly are more likely to be injured
+                        return "Even though you may feel fine now, it is important to ensure you are checked for possible injuries. Elderly involved in a car accident of any kind are more likely to be injured, even in fender benders. We recommend seeing your doctor and contacting us at 813-555-5555 to set up a free consultation to review your case and determine the best route to ensure any potential injuries are taken care of.";
+					} else if (this.option2 && this.role1) {
+							return "Even though you may feel fine now, it is important to ensure you are checked for possible injuries. We recommend seeing your doctor and contacting us at 813-555-5555 to set up a free consultation to review your case and determine the best route to ensure any potential injuries are taken care of."
+						}
+				}				
+//Not injured and passenger
+				if (this.option2 && this.role2) {
+					return "Even though you may feel fine now, it is important to ensure you are checked for possible injuries. We recommend seeing your doctor and contacting us at 813-555-5555 to set up a free consultation to review your case and determine the best route to ensure any potential injuries are taken care of."
+				}		
+//Unknown injured and driver
+				if (this.option3 && this.role1) {
+					return "Contact us at 813-555-5555 to set up a free consultation to review your case today."
+				}	
+//Unknown injured and passenger
+				if (this.option3 && this.role1) {
+					return "Contact us at 813-555-5555 to set up a free consultation to review your case today."
+				} 
+            }
+
+        }
+	
+function process_form() {
+	var fm = document.getElementById("contactform");
+	var out = document.getElementById("output");
+	var selection = new Selection(fm);
+	out.style.background = selection.accident();
+	out.innerHTML = selection.direction();
+    }
+</script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Contact Our Legal Group</h1>
+        <form id="contactform">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <select class="form-control" id="age">
+                    <option value="0">Please select your age category</option>
+                    <option value="1">1-12 years old</option>
+                    <option value="13">13-25 years old</option>
+                    <option value="26">26-40 years old</option>
+                    <option value="41">41-64 years old</option>
+                    <option value="65">65 and older</option>
+                </select>
+            </div>
+
+            <h4>As a result of the accident:</h4>
+            <br>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="option1">
+                <label class="form-check-label" for="option1">I was injured in a car accident, or others in my vehicle were injured in a car accident.</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="option2">
+                <label class="form-check-label" for="option2">I was involved in a car accident, but there were no injuries to myself or others.</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="option3">
+                <label class="form-check-label" for="option3">I was involved in a car accident, but am not sure if there were injuries to myself or others.</label>
+            </div>
+
+			<h4>I was the:</h4>
+			<br>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="role1">
+                <label class="form-check-label" for="role1">Driver</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="role2">
+                <label class="form-check-label" for="role2">Passenger/Other</label>
+            </div>
+
+            <button type="button" class="btn btn-secondary" onclick="process_form()">Submit</button>
+
+            <div id="output">
+
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
