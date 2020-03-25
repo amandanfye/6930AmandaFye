@@ -1,18 +1,20 @@
+ // This code has been adapated from Eric. Thank you!
+
 function process_form() {
-    // get form object
+    // pulls the form object
     var fm = document.getElementById("my_form");
-    // get output object
+    // pulls the output objects
     var out1 = document.getElementById("photo");
     var out2 = document.getElementById("planttype");
-    var out3 = document.getElementById("att");
-    var out4 = document.getElementById("des");
-    // instantiate  object
+    var out3 = document.getElementById("keyword");
+    var out4 = document.getElementById("description");
+
     var plant = new Plant(fm);
-    // output result   
-    out1.src = dimg[plant.sort()];
-    out2.innerHTML = dname[plant.sort()];
-    out3.innerHTML = datt[plant.sort()];
-    out4.innerHTML = ddes[plant.sort()];
+
+    out1.src = plantimg[plant.select()];
+    out2.innerHTML = plantname[plant.select()];
+    out3.innerHTML = plantkey[plant.select()];
+    out4.innerHTML = plantdesc[plant.select()];
 }
 
 function Plant(fm) {
@@ -21,8 +23,8 @@ function Plant(fm) {
     this.input_location = fm.input_location.value;
     this.input_pets = fm.input_pets.value;
 
-    this.sort = function () {
-        // sort result based on input
+    this.select = function () {
+        // loop through the array based on what the user inputs
         if (this.input_owner == 'killer' && this.input_location == 'in' && this.input_pets == 'yes') {
             return 0; // killer of plants, inside, with pets
         } else if (this.input_owner == 'killer' && this.input_location == 'in' && this.input_pets == 'no') {
@@ -52,7 +54,7 @@ function Plant(fm) {
 }
 
 // Arrays
-var dimg = [
+var plantimg = [
 	"./images/castiron.jpg", 
 	"./images/cornplant.jpg", 
 	"./images/lambsear.jpg", 
@@ -65,7 +67,7 @@ var dimg = [
 	"./images/azalea.jpg", 
 	"./images/bostonfern.jpg", 
 	"./images/fiddleleaffig.jpg",]
-var dname = [
+var plantname = [
 	"Cast Iron Plant", 
 	"Corn Plant", 
 	"Lambs Ear", 
@@ -78,7 +80,7 @@ var dname = [
 	"Azalea", 
 	"Boston Fern", 
 	"Fiddle Leaf Fig Tree"]
-var datt = [
+var plantkey = [
 	"Easy and Low-Light, Non-toxic to Pets", 
 	"Easy and Low-Light, Toxic to Pets", 
 	"Easy and Drought-Tolerant, Non-toxic to Pets", 
@@ -91,7 +93,7 @@ var datt = [
 	"Advanced and Partial-Light, Toxic to Pets", 
 	"Advanced and Partial-Light, Non-toxic to Pets", 
 	"Advanced and Partial-Light, Toxic to Pets"]
-var ddes = [
+var plantdesc = [
 	"The cast iron plant is one of the easiest house plants I have come across to care for. While this species does prefer bright light it survives well in shaded spots and rooms lacking natural light. The main way a grower can harm this plant is by over-watering or re-potting too often, so for those that forget about watering and care will love the aspidistra elatior (botanical name).", 
 	"Another favorite for many households and offices is the corn plant that looks outstanding as a focal point within a large sized room. This plant will grow best in bright light conditions, but it tolerates low light as well. Like other dracaenas it's a slow growing plant that tolerates neglect. Worst things to do is over water, sit it in direct sun for too long or let it get too cold.", 
 	"Lamb's ear (Stachys byzantina) is regarded mainly as a foliage plant. Not only are its leaves a pretty, silvery color, but they are also pleasing to the touch (velvety soft). The low-care features of this perennial include the fact that it is a drought-tolerant plant.", 
