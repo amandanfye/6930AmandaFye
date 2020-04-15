@@ -285,7 +285,7 @@ h1, h2, h3, p. a {
 }
 
 .form {
-	padding: 0 10em 0 10em;
+	padding: 0 6em 0 6em;
 }
 
 .wrapinput2 {
@@ -426,6 +426,43 @@ textarea.input2 + .focus-input2::after {
 }
 
 
+/*Accordian Menus*/
+button.accordion {
+    background-color: #000063;
+    color: #fff;
+    cursor: pointer;
+    padding: 2em 2em 2em 2em;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+}
+
+
+button.accordion.active, button.accordion:hover {
+    background-color: #CE0000;
+}
+
+div.panel {
+    padding: 0 2em 0 2em;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px; 
+}
+
+
+
+
 
 
 /*Footer*/
@@ -437,7 +474,7 @@ textarea.input2 + .focus-input2::after {
 }
 
 .footer p {
-	font-size:1vw;
+	font-size:1em;
 	color: #fff;
 }
 
@@ -449,7 +486,7 @@ textarea.input2 + .focus-input2::after {
 
 
 /* Feature Section Responsiveness */
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 840px) {
   .column {
     width: 100%;
   }
