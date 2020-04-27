@@ -79,7 +79,7 @@ h1, h2, h3, p. a {
 
 .dropdown-content a {
   	float: none;
-  	color: #000;
+  	color: #06062f;
   	padding: 12px 16px;
   	text-decoration: none;
   	display: block;
@@ -87,12 +87,12 @@ h1, h2, h3, p. a {
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  	background-color: #ce0000;
-  	color: #fff;
+  	background-color: #f6f6f6;
+  	color: #06062f;
 }
 
 .dropdown-content a:hover {
-  	background-color: #ce0000;
+  	background-color: #06062f;
   	color: #fff;
 }
 
@@ -131,14 +131,14 @@ h1, h2, h3, p. a {
 }
 
 .centered h1 {
-	font-size: 4vw;
+	font-size: 32px;
 	color: #fff;
 	font-family: 'Source Sans Pro', sans-serif;
 	margin-bottom:0.5em;
 }
 
 .centered p {
-	font-size:2.5vw;	
+	font-size:22px;	
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -153,20 +153,20 @@ h1, h2, h3, p. a {
 }
 
 .banner h2 {
-	font-size:3vw;
+	font-size:32px;
 	color: #ce0000;
 	margin-bottom:1em;
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .banner p {
-	font-size:2vw;
+	font-size:22px;
 	color: #000;	
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .banner h1 {
-	font-size:3vw;
+	font-size:32px;
 	color: #000063;
 	margin-bottom:1em;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -195,13 +195,13 @@ h1, h2, h3, p. a {
 }
 
 .ourfirmtext a{
-	font-size:3vw;
+	font-size:32px;
 	color: #ce0000;
 	text-decoration: none;
 }
 
 .ourfirmtext p {
-	font-size:2vw;
+	font-size:18px;
 	color: #000;
 	margin-top: 1em;
 }
@@ -249,13 +249,13 @@ h1, h2, h3, p. a {
 }
 
 .lawtypes h2 {
-	font-size:3vw;
+	font-size:32px;
 	color: #ce0000;
 	margin-bottom: 1em;
 }
 
 .lawtypes p {
-	font-size:2vw;
+	font-size:18px;
 	color: #000;
 	margin-top: 2em;
 	margin-right: 2em;
@@ -439,42 +439,53 @@ textarea.input2 + .focus-input2::after {
   	opacity: 1;
 }
 
-
-/*Accordian Menus*/
-button.accordion {
-    background-color: #000063;
-    color: #fff;
-    cursor: pointer;
-    padding: 2em 2em 2em 2em;
-    width: 100%;
-    text-align: center;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-  	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 18px;
+/*Search Bar and FAQ*/
+#searchbar{
+  width: 80%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
 }
 
-
-button.accordion.active, button.accordion:hover {
-    background-color: #CE0000;
+#accordian {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-div.panel {
-    background-color: #fff;
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.6s ease-in-out;
-    opacity: 0;
-  	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 18px;
+#accordian li a {
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  display: block
 }
 
-div.panel.show {
-    opacity: 1;
-	max-height: 100%;
-	padding: 1em;
+#accordian li a:hover:not(.header) {
+  background-color: #eee;
 }
+
+.button { 
+  border-radius: 5px;
+  padding: .5em;
+  text-decoration: none;
+}
+
+.button:focus,
+.button:hover {
+  background-color: #fff;
+}
+
+.content {
+  display: none;
+  margin: 1em 0;
+}
+
+.content.active,
+.no-js .content {
+  display: block;
+}
+
 
 .columnleft {
 	float: left;
@@ -485,6 +496,21 @@ div.panel.show {
 	float: left;
 	width: 80%;
 }
+
+.columnmiddle h1{
+  	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	color: #CE0000;
+	font-weight:bold;
+}
+
+.columnmiddle p{
+  	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	color: #000;
+	background-color: #fff;
+}
+
 .columnright {
 	float: left;
 	width: 10%;

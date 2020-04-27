@@ -8,16 +8,82 @@ function hamburger() {
   }
 }
 
-//Accordian FAQ Menus
-var acc = document.getElementsByClassName("accordion");
-var i;
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("show");
+
+
+//Search Bar
+function SearchFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchbar");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("accordian");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
     }
 }
+
+
+
+
+//Search Buttons
+(function (document, window, undefined) {
+  'use strict';
+  
+  // Buttons
+  var buttons = document.querySelectorAll('.js-button');   
+  
+  var displayContent = function (button, content) {
+    if (content.classList.contains('active')) {
+        // Content is hidden
+        content.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
+        content.setAttribute('aria-hidden', 'true');
+      } else {
+        // Show the content
+        content.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+        content.setAttribute('aria-hidden', 'false');
+      }
+  };
+  
+  [].forEach.call(buttons, function(button, index) {
+    // Content var
+    var content = button.nextElementSibling;
+    
+    // Set button attributes
+    button.setAttribute('id', 'button-' + index);
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', 'content-' + index);
+    
+    // Set content attributes
+    content.setAttribute('id', 'content-' + index);
+    content.setAttribute('aria-hidden', 'true');    
+    content.setAttribute('aria-labelledby', 'button-' + index);
+  
+    button.addEventListener('click', function () {
+      displayContent(this, content);
+      return false;
+    }, false);
+    
+    button.addEventListener('keydown', function (event) {
+      // Handle 'space' key
+      if (event.which === 32) {
+        event.preventDefault();
+        displayContent(this, content);
+      }
+    }, false);
+    
+  });  
+  
+})(document, window);
+
 
 
 //Contact Form
