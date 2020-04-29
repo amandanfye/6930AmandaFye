@@ -1,11 +1,11 @@
 //Hamburger Menu for Nav Bar
 function hamburger() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+	var x = document.getElementById("myTopnav");//calls ID myTopnav
+  	if (x.className === "topnav") { 
+    	x.className += "responsive"; //display as hamburger menu if top nav is equal to class responsive which occurs in 		CSS at 840px screensize
+  	} else {
+    	x.className = "topnav"; //otherwise it will display as the top navigation menu
+  	}
 }
 
 
@@ -14,13 +14,12 @@ function hamburger() {
 //Search Bar
 function SearchFunction() {
     var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("searchbar");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("accordian");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
+    input = document.getElementById("searchbar");//call the ID searchbar
+    filter = input.value.toUpperCase(); //indicates case does not matter
+    ul = document.getElementById("accordian");//call the ID accordian
+    li = ul.getElementsByTagName("li");//call the <li> tag
+    for (i = 0; i < li.length; i++) { //loop will run for entire length of li element and hide the items that do not match
         a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
@@ -34,60 +33,56 @@ function SearchFunction() {
 
 //Search Buttons
 (function (document, window, undefined) {
-  'use strict';
+	'use strict'; //'use strict' indicates the code is executed in strict mode for the entire length of the function
   
-  // Buttons
-  var buttons = document.querySelectorAll('.js-button');   
+  	// Buttons
+  	var buttons = document.querySelectorAll('.js-button');//selects the button .js-button
   
-  var displayContent = function (button, content) {
-    if (content.classList.contains('active')) {
-        // Content is hidden
-        content.classList.remove('active');
-        button.setAttribute('aria-expanded', 'false');
-        content.setAttribute('aria-hidden', 'true');
-      } else {
-        // Show the content
-        content.classList.add('active');
-        button.setAttribute('aria-expanded', 'true');
-        content.setAttribute('aria-hidden', 'false');
-      }
-  };
+  	var displayContent = function (button, content) {//calls classes button and content
+    	if (content.classList.contains('active')) {// content is hidden
+        	content.classList.remove('active');
+        	button.setAttribute('aria-expanded', 'false');
+        	content.setAttribute('aria-hidden', 'true');
+     	} else {//show the content
+        	content.classList.add('active');
+        	button.setAttribute('aria-expanded', 'true');
+        	content.setAttribute('aria-hidden', 'false');
+      	}
+  	};
   
-  [].forEach.call(buttons, function(button, index) {
-    // Content var
-    var content = button.nextElementSibling;
+[].forEach.call(buttons, function(button, index) {
+	var content = button.nextElementSibling;//returns element immediately following the button element
+    	//set button attributes
+    	button.setAttribute('id', 'button-' + index);
+    	button.setAttribute('aria-expanded', 'false');
+   	 	button.setAttribute('aria-controls', 'content-' + index);
     
-    // Set button attributes
-    button.setAttribute('id', 'button-' + index);
-    button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-controls', 'content-' + index);
+    	//set content attributes
+    	content.setAttribute('id', 'content-' + index);
+   	 	content.setAttribute('aria-hidden', 'true');
+    	content.setAttribute('aria-labelledby', 'button-' + index);
+
+		button.addEventListener('click', function () {
+      		displayContent(this, content);
+      	  	return false;
+    	}, false);
     
-    // Set content attributes
-    content.setAttribute('id', 'content-' + index);
-    content.setAttribute('aria-hidden', 'true');    
-    content.setAttribute('aria-labelledby', 'button-' + index);
-  
-    button.addEventListener('click', function () {
-      displayContent(this, content);
-      return false;
-    }, false);
+    	button.addEventListener('keydown', function (event) {
+      	// Handle 'space' key
+      		if (event.which === 32) {
+       		 event.preventDefault();
+        	 displayContent(this, content);
+      		}
+    	}, false);
     
-    button.addEventListener('keydown', function (event) {
-      // Handle 'space' key
-      if (event.which === 32) {
-        event.preventDefault();
-        displayContent(this, content);
-      }
-    }, false);
-    
-  });  
+  	});  
   
 })(document, window);
 
 
 
 //Contact Form
-(function ($) {
+(function ($) {//utilizes JQuery
     "use strict";
 
     $('.input2').each(function(){
@@ -102,13 +97,13 @@ function SearchFunction() {
     })
             
 
-var name = $('.validate-input input[name="name"]'); //Name input
-var phone = $('.validate-input input[name="phone"]'); //Phone input
-var email = $('.validate-input input[name="email"]'); //Email input
-var message = $('.validate-input textarea[name="message"]'); //Message input
+var name = $('.validate-input input[name="name"]'); //name input
+var phone = $('.validate-input input[name="phone"]'); //phone input
+var email = $('.validate-input input[name="email"]'); //email input
+var message = $('.validate-input textarea[name="message"]'); //message input
 
 
-    $('.validateform').on('submit',function(){
+    $('.validateform').on('submit',function(){//form validates onsubmit assuming all elements are filled in (including 	email)
         var check = true;
 
         if($(name).val().trim() == ''){
@@ -138,13 +133,13 @@ var message = $('.validate-input textarea[name="message"]'); //Message input
        });
     });
 
-    function showValidate(input) {
+    function showValidate(input) {//form throws error alerts when an input is missed
         var thisAlert = $(input).parent();
 
         $(thisAlert).addClass('alert-validate');
     }
 
-    function hideValidate(input) {
+    function hideValidate(input) {//removes alert when the input is complete
         var thisAlert = $(input).parent();
 
         $(thisAlert).removeClass('alert-validate');
