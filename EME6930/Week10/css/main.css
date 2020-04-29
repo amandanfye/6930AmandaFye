@@ -155,8 +155,9 @@ h1, h2, h3, p. a {
 .banner h2 {
 	font-size:32px;
 	color: #ce0000;
-	margin-bottom:1em;
 	font-family: 'Source Sans Pro', sans-serif;
+	left-margin: 2em;
+	right-margin: 2em;
 }
 
 .banner p {
@@ -278,16 +279,22 @@ h1, h2, h3, p. a {
 
 
 /*Contact*/
+.contactcontainer {
+	padding: 2em;
+	background: #fff;
+}
+
 .contact {
     position: relative;
     text-align: center;
 	padding: 4.5em 0 4.5em 0;
 	font-family: 'Source Sans Pro', sans-serif;
 	background: #000063;
+	border-radius: 25px;
 }
 
 .contact h2 {
-	font-size:3vw;
+	font-size:32px;
 	color: #fff;
 	margin-bottom: 1em;
 }
@@ -474,6 +481,7 @@ textarea.input2 + .focus-input2::after {
 .button:focus,
 .button:hover {
   background-color: #fff;
+  color: #CE0000;
 }
 
 .content {
