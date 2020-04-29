@@ -10,23 +10,24 @@ function hamburger() {
 
 
 
-
 //Search Bar
-function SearchFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("searchbar");//call the ID searchbar
-    filter = input.value.toUpperCase(); //indicates case does not matter
-    ul = document.getElementById("accordian");//call the ID accordian
-    li = ul.getElementsByTagName("li");//call the <li> tag
-    for (i = 0; i < li.length; i++) { //loop will run for entire length of li element and hide the items that do not match
-        a = li[i].getElementsByTagName("a")[0];
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
+ function SearchFunction() {
+     var input, filter, ul, li, a, i, txtValue;
+     input = document.getElementById("searchbar"); //call the ID searchbar
+     filter = input.value.toUpperCase(); //indicates case does not matter
+     ul = document.getElementById("accordian"); //call the ID accordian
+     li = ul.getElementsByTagName("li"); //call the <li> tag
+	 //loop will run for entire length of li element and hide the items that do not match
+     for (i = 0; i < li.length; i++) {
+         a = li[i].getElementsByTagName("a")[0];
+         txtValue = a.textContent || a.innerText;
+         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+             li[i].style.display = "";
+         } else {
+             li[i].style.display = "none";
+         }
+     }
+ }
 
 
 
