@@ -2,7 +2,7 @@
 function hamburger() {
 	var x = document.getElementById("myTopnav");//calls ID myTopnav
   	if (x.className === "topnav") { 
-    	x.className += "responsive"; //display as hamburger menu if top nav is equal to class responsive which occurs in 		CSS at 840px screensize
+    	x.className += " responsive"; //display as hamburger menu if top nav is equal to class responsive which occurs in 		CSS at 840px screensize
   	} else {
     	x.className = "topnav"; //otherwise it will display as the top navigation menu
   	}
